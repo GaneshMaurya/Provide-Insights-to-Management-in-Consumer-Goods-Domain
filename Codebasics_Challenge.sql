@@ -14,7 +14,7 @@ customer_code=90002002
 group by fiscal_year
 order by fiscal_year;
 
-# Chhecking Outputs of Tables
+# Checking Outputs of Tables
 select * from gdb023.dim_customer limit 10;
 select * from gdb023.dim_product limit 10;
 select * from gdb023.fact_gross_price limit 10;
@@ -27,6 +27,7 @@ select customer, market, region
 from gdb023.dim_customer 
 where customer = 'Atliq Exclusive' and region = 'APAC';
 
+# Q1 - Final
 select distinct(market) 
 from gdb023.dim_customer 
 where customer = 'Atliq Exclusive' and region = 'APAC';
@@ -41,6 +42,7 @@ where fiscal_year = 2020) as unique_products_2020,
 from gdb023.fact_sales_monthly 
 where fiscal_year = 2021) as unique_products_2021;
 
+# Q2 - Final
 select unique_products_2020, unique_products_2021, 
 round(((unique_products_2021 - unique_products_2020)/unique_products_2020)*100, 2) as percentage_chg
 from (
@@ -57,6 +59,7 @@ select segment, count(product_code) as product_count
 from gdb023.dim_product 
 group by segment order by product_count desc;
 
+# Q4 - Final
 select segment, unique_products_2020, unique_products_2021, 
 (unique_products_2021 - unique_products_2020) as difference
 from (
@@ -71,10 +74,12 @@ from (
 # Q5
 select * from gdb023.fact_manufacturing_cost;
 
+# Q5 - Final
 select c.product_code, p.product, c.manufacturing_cost
 from gdb023.dim_product p join gdb023.fact_manufacturing_cost c
 on p.product_code = c.product_code order by c.manufacturing_cost desc limit 1;
 
+# Q5 - Final
 select c.product_code, p.product, c.manufacturing_cost
 from gdb023.dim_product p join gdb023.fact_manufacturing_cost c
 on p.product_code = c.product_code order by c.manufacturing_cost asc limit 1;
@@ -84,6 +89,7 @@ select distinct(customer) from gdb023.dim_customer;
 select customer_code, (pre_invoice_discount_pct) as average from gdb023.fact_pre_invoice_deductions 
 group by customer_code order by average desc limit 5;
 
+# Q6 - Final
 select c.customer_code, c.customer, round(pre_invoice_discount_pct*100, 2) as pre_invoice_discount_pct 
 from gdb023.dim_customer c 
 join (
@@ -133,6 +139,7 @@ where p.product_code = m.product_code
 group by p.division, p.product_code, p.product
 order by m.sold_quantity desc;
 
+# Q10 - Final
 select * from (select p.division, p.product_code, p.product, total_sold_quantity, 
 rank() over (partition by p.division order by total_sold_quantity desc) as rank_order 
 from gdb023.dim_product p join (
