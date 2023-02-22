@@ -24,5 +24,6 @@ Imagine yourself as the applicant for this role and perform the following task
 <li>Sample questions and Presentation
 </ul>
 
-<b>Challenge Link and downloadable Files</b>
-<a href="https://codebasics.io/event/codebasics-resume-project-challenge">Resume Challenge</a>
+<b>Challenge Link and downloadable Files</b>: <a href="https://codebasics.io/event/codebasics-resume-project-challenge">Resume Challenge</a>
+<br>
+<p>#codebasicsresumeprojectchallenge</p>
