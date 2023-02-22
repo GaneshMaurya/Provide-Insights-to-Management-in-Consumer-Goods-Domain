@@ -17,7 +17,9 @@ Imagine yourself as the applicant for this role and perform the following task
 
 <b>Other resources Provided:</b>
 
-a.    Dataset required to provide 
-b.    Metadata
-c.    Hints (try not to use the hints to develop your skills quicker)
-d.    Sample questions and Presentation
+<ul>
+<li>Dataset required to provide 
+<li>Metadata
+<li>Hints (try not to use the hints to develop your skills quicker)
+<li>Sample questions and Presentation
+</ul>
